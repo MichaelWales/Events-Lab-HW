@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const newDoggoForm = document.querySelector('#new-doggo-form');
   newDoggoForm.addEventListener('submit', handleNewDoggoFormSubmit);
 
+  const deleteAllButton = document.querySelector('#delete-all');
+  deleteAllButton.addEventListener('click', handleDeleteAllClick);
 })
 
 const handleNewDoggoFormSubmit = function (event) {
@@ -34,10 +36,11 @@ const createGoodListItem = function (form) {
   status.textContent = form.status.value;
   goodListItem.appendChild(status);
 
-  // const goodBoyGirl = document.createElement('p');
-  // goodBoyGirl.textContent = form.goodBoyGirl.value;
-  // goodListItem.appendChild(goodBoyGirl);
+  return goodListItem;
 
-  return goodListItem;  
+}
 
+const handleDeleteAllClick = function (event) {
+  const goodList = document.querySelector('#goodgood-list');
+  goodList.innerHTML = '';
 }
